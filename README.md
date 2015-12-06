@@ -14,8 +14,8 @@ Basically, each table has primary key as Price_id, Ticker_id, and Source_id. ASX
 
 Regarding the issue of certain company having multiple Ticker_codes i.e. carsales.com.au has CAR and CRZ, it can be resolved by strictly keeping formal company name. For instance, CAR and CRZ can be inserted in TICKER table as a different row of record. However, having same formal Company_name will allow us to query using either of them (tickers) to pull data from both. See the query below.
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
-
+![Image of DB Design](images/unamed.png)
+```
 SELECT		AP.PRRICE_ID,
 			T.TICKER_CODE,	-- 'CAR' or 'CRZ'
 			AP.COMPUTE_DATE,		
@@ -29,7 +29,7 @@ FROM 		ASX_PRICE AP WITH(NOLOCK)
 INNER JOIN 	TICKER T WITH(NOLOCK)		ON AP.TICKER_ID=T.TICKER_ID 
 WHERE		T.COMPANY_NAME IN (SELECT COMPANY_NAME FROM TICKER WHERE ACTIVATED=1 AND TICKER_CODE='CAR')
 ORDER BY	AP.COMPUTE_DATE ASC;
-
+```
 
 ####Task 2. Financial data mining program
 
