@@ -1,9 +1,11 @@
-#### Programming tasks
+## Programming tasks
 Carsales.Com is a provider for automotive advertising which is listed on the Australian Stock Exchange (ASX). The ASX identifies companies with an alphanumeric code (ticker). The current ticker for Carsales is CAR, but prior to 26/2/2015 the ticker was CRZ. This task consists of 2 parts:
+
 1. Design a database schema to store pricing history (Open, Low, High, Close, Volume, AdjClose) for companies listed on the ASX. The schema should allow the user to see the correct company ticker at any specific date, and also the daily return to be derived from AdjClose pricing data,
 
 2. Create an executable in a programming language of your choice to retrieve pricing data for Carsales from Yahoo Finance between 2 dates and save to CSV file(s) in a form ready to be inserted into the database schema previously designed.
 
+## Solutions
 ####Task 1. Database schema design
 
 In my solution, there will be 3 data tables:
